@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#080e18" />
+    <meta
+      name="description"
+      content="NEON SIEGE — a first-person robot arena shooter. Survive the signal."
+    />
+    <title>NEON SIEGE · Survive the signal.</title>
+  </head>
+  <body>
+    <div id="app">
+      <div id="boot">
+        <span>NS // SYSTEM INITIALIZING</span><progress max="100" value="10"></progress>
+      </div>
+    </div>
+    <script>
+      window.addEventListener(
+        'error',
+        function (event) {
+          if (
+            event.target instanceof HTMLScriptElement ||
+            event.target instanceof HTMLLinkElement
+          ) {
+            var boot = document.getElementById('boot');
+            if (boot) {
+              boot.innerHTML =
+                '<span>GAME FILES COULD NOT LOAD</span><p>Check your connection and retry.</p><button onclick="location.reload()">RETRY LOADING</button>';
+            }
+          }
+        },
+        true,
+      );
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

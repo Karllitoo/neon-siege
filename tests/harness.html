@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>NEON SIEGE test harness</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      // This harness is only served by Vite for automated tests. It is never part of dist.
+      import '/src/style.css';
+      import { Game } from '/src/game.ts';
+      window.testGame = new Game(document.querySelector('#app'));
+    </script>
+  </body>
+</html>
